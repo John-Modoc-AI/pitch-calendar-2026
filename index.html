@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Pitch Calendar (2026.05.25 ~ 07.21)</title>
 <style>
   body {
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
     background: #f5f7fa;
     color: #222;
     margin: 0;
-    padding: 32px;
+    padding: 12px;
   }
   h1 {
     text-align: center;
     color: #1F4E79;
-    margin-bottom: 32px;
+    margin: 0 0 12px;
+    font-size: 22px;
   }
   .calendar {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 24px;
+    padding: 12px;
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -32,9 +33,9 @@
   th {
     background: #5B9BD5;
     color: #fff;
-    padding: 10px 4px;
+    padding: 4px 4px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 11px;
     border: 1px solid #4A8BC2;
   }
   th.sat { background: #4a8bc2; }
@@ -42,35 +43,35 @@
   td {
     border: 1px solid #d9d9d9;
     vertical-align: top;
-    height: 100px;
-    padding: 6px 8px;
+    height: 56px;
+    padding: 3px 5px;
     background: #fff;
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 10px;
+    line-height: 1.25;
   }
   td.empty { background: #fafafa; }
   td.weekend-sun { background: #fff5f5; }
   td.weekend-sat { background: #f5f9fc; }
   .day-num {
     font-weight: 600;
-    font-size: 13px;
-    margin-bottom: 4px;
+    font-size: 11px;
+    margin-bottom: 2px;
     color: #333;
   }
   .day-num .month {
     color: #1F4E79;
-    margin-right: 4px;
+    margin-right: 3px;
     font-weight: 700;
   }
   .sun .day-num { color: #c44; }
   .sat .day-num { color: #4080b8; }
   .ev {
     display: block;
-    padding: 2px 5px;
-    margin: 2px 0;
-    border-radius: 3px;
-    font-size: 10px;
-    line-height: 1.3;
+    padding: 1px 4px;
+    margin: 1px 0;
+    border-radius: 2px;
+    font-size: 9px;
+    line-height: 1.25;
   }
   .ev-travel { background: #fef0d4; border-left: 3px solid #f0ad4e; }
   .ev-conf { background: #d6ebff; border-left: 3px solid #428bca; }
@@ -81,7 +82,7 @@
   td.bar {
     vertical-align: middle;
     text-align: center;
-    padding: 14px 10px;
+    padding: 8px 6px;
   }
   td.bar-boston {
     background: #f5f9f5;
@@ -90,39 +91,46 @@
   }
   .bar-label {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     color: #6b8a6b;
   }
   .bar-sub {
-    font-size: 11px;
+    font-size: 10px;
     color: #999;
-    margin-top: 4px;
+    margin-top: 2px;
   }
 
-  .to-confirm {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 20px 28px;
+  .actions {
+    display: flex;
+    gap: 12px;
     max-width: 1400px;
-    margin: 24px auto 0;
-    border-left: 4px solid #f0ad4e;
+    margin: 12px auto 0;
   }
-  .to-confirm h3 {
+  .actions > div {
+    flex: 1;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 10px 16px;
+  }
+  .to-confirm { border-left: 3px solid #f0ad4e; }
+  .to-book { border-left: 3px solid #5cb85c; }
+  .actions h3 {
     color: #1F4E79;
-    margin: 0 0 12px;
-    font-size: 18px;
+    margin: 0 0 4px;
+    font-size: 13px;
   }
-  .to-confirm ul {
+  .actions ul {
     margin: 0;
-    padding-left: 20px;
-    line-height: 1.9;
+    padding-left: 18px;
+    line-height: 1.5;
     color: #444;
+    font-size: 12px;
   }
 
   @media print {
     body { background: #fff; padding: 12px; }
-    .calendar, .to-confirm { box-shadow: none; }
+    .calendar, .actions > div { box-shadow: none; }
   }
 </style>
 </head>
@@ -134,7 +142,7 @@
 <table>
   <thead>
     <tr>
-      <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sat">토</th><th class="sun">일</th>
+      <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="sat">Sat</th><th class="sun">Sun</th>
     </tr>
   </thead>
   <tbody>
@@ -181,8 +189,8 @@
       <td class="weekend-sat sat"><div class="day-num">13</div></td>
       <td class="weekend-sun sun">
         <div class="day-num">14</div>
-        <span class="ev ev-travel">✈ 송윤권 ICN→LAX (YP 101)</span>
-        <span class="ev ev-travel">✈ 김명찬 BOS→LAX (B6 287)</span>
+        <span class="ev ev-travel">✈ John ICN 13:00 → LAX 08:20</span>
+        <span class="ev ev-travel">✈ MC BOS 06:00 → LAX 09:14</span>
       </td>
     </tr>
 
@@ -190,12 +198,12 @@
     <tr>
       <td>
         <div class="day-num">15</div>
-        <span class="ev ev-pitch1">🟣 Jon Chang — Office</span>
-        <span class="ev ev-travel">✈ SNA→LAS→SJC 6 PM</span>
+        <span class="ev ev-pitch1">🟣 Jon Chang — Office, Orange County, CA</span>
+        <span class="ev ev-travel">✈ SNA 18:00 → SJC 21:40 (LAS)</span>
       </td>
       <td>
         <div class="day-num">16</div>
-        <span class="ev ev-conf">🎤 Venture Summit West (Day 1) — Mountain View, CA</span>
+        <span class="ev ev-conf">🎤 Venture Summit West (Day 1) — Silicon Valley</span>
       </td>
       <td>
         <div class="day-num">17</div>
@@ -203,7 +211,7 @@
       </td>
       <td>
         <div class="day-num">18</div>
-        <span class="ev ev-conf">🚀 Tech Weekend (Day 1) — San Francisco</span>
+        <span class="ev ev-conf">🚀 Tech Weekend (Day 1) — Silicon Valley</span>
       </td>
       <td>
         <div class="day-num">19</div>
@@ -212,63 +220,63 @@
       <td class="weekend-sat sat"><div class="day-num">20</div></td>
       <td class="weekend-sun sun">
         <div class="day-num">21</div>
-        <span class="ev ev-travel">✈ SFO→EWR→BOS (UA 419/2433)</span>
+        <span class="ev ev-travel">✈ SFO 06:00 → BOS 17:57 (EWR)</span>
       </td>
     </tr>
 
     <!-- Week Jun 22 - 28 -->
     <tr>
-      <td><div class="day-num">22</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">23</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">24</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">25</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">26</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sat sat"><div class="day-num">27</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sun sun"><div class="day-num">28</div><span class="ev ev-boston">in Boston</span></td>
+      <td><div class="day-num">22</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">23</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">24</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">25</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">26</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sat sat"><div class="day-num">27</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sun sun"><div class="day-num">28</div><span class="ev ev-boston">John in Boston</span></td>
     </tr>
 
     <!-- Week Jun 29 - Jul 5 -->
     <tr>
-      <td><div class="day-num">29</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">30</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num"><span class="month">Jul</span>1</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">2</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">3</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sat sat"><div class="day-num">4</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sun sun"><div class="day-num">5</div><span class="ev ev-boston">in Boston</span></td>
+      <td><div class="day-num">29</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">30</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num"><span class="month">Jul</span>1</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">2</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">3</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sat sat"><div class="day-num">4</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sun sun"><div class="day-num">5</div><span class="ev ev-boston">John in Boston</span></td>
     </tr>
 
     <!-- Week Jul 6 - 12 -->
     <tr>
-      <td><div class="day-num">6</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">7</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">8</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">9</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">10</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sat sat"><div class="day-num">11</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sun sun"><div class="day-num">12</div><span class="ev ev-boston">in Boston</span></td>
+      <td><div class="day-num">6</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">7</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">8</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">9</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">10</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sat sat"><div class="day-num">11</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sun sun"><div class="day-num">12</div><span class="ev ev-boston">John in Boston</span></td>
     </tr>
 
     <!-- Week Jul 13 - 19 -->
     <tr>
-      <td><div class="day-num">13</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">14</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">15</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">16</div><span class="ev ev-boston">in Boston</span></td>
-      <td><div class="day-num">17</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sat sat"><div class="day-num">18</div><span class="ev ev-boston">in Boston</span></td>
-      <td class="weekend-sun sun"><div class="day-num">19</div><span class="ev ev-boston">in Boston</span></td>
+      <td><div class="day-num">13</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">14</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">15</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">16</div><span class="ev ev-boston">John in Boston</span></td>
+      <td><div class="day-num">17</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sat sat"><div class="day-num">18</div><span class="ev ev-boston">John in Boston</span></td>
+      <td class="weekend-sun sun"><div class="day-num">19</div><span class="ev ev-boston">John in Boston</span></td>
     </tr>
 
     <!-- Week Jul 20 - 26 -->
     <tr>
       <td>
         <div class="day-num">20</div>
-        <span class="ev ev-travel">✈ 송윤권 BOS→YYC→ICN (WS 1627/86, 캘거리 경유)</span>
+        <span class="ev ev-travel">✈ John BOS 07:25 → ICN 18:45 (next day, via YYC)</span>
       </td>
       <td>
         <div class="day-num">21</div>
-        <span class="ev ev-travel">↳ ICN 18:45 도착</span>
+        <span class="ev ev-travel">↳ Arrives ICN 18:45</span>
       </td>
       <td><div class="day-num">22</div></td>
       <td><div class="day-num">23</div></td>
@@ -281,14 +289,24 @@
 </table>
 </div>
 
-<div class="to-confirm">
-  <h3>To Confirm</h3>
-  <ul>
-    <li>Jon Chang online pitch date &amp; time</li>
-    <li>Jon Chang offline pitch time</li>
-    <li>Sunday 14th accommodation</li>
-    <li>John Boston accommodation</li>
-  </ul>
+<div class="actions">
+  <div class="to-confirm">
+    <h3>To Confirm</h3>
+    <ul>
+      <li>Jon Chang online pitch date &amp; time</li>
+      <li>Jon Chang offline pitch time</li>
+    </ul>
+  </div>
+  <div class="to-book">
+    <h3>To Book</h3>
+    <ul>
+      <li>Airplane tickets</li>
+      <li>Sunday 14th accommodation</li>
+      <li>John Boston accommodation</li>
+      <li>Venture Summit West tickets</li>
+      <li>Tech Weekend tickets</li>
+    </ul>
+  </div>
 </div>
 
 </body>
