@@ -127,6 +127,10 @@
     color: #444;
     font-size: 12px;
   }
+  .actions ul li.done {
+    text-decoration: line-through;
+    color: #999;
+  }
 
   @media print {
     body { background: #fff; padding: 12px; }
@@ -292,7 +296,10 @@
 <div class="actions">
   <div class="to-confirm">
     <h3>To Confirm</h3>
-    <ul></ul>
+    <ul>
+      <li class="done">Jon Chang online pitch date &amp; time</li>
+      <li class="done">Jon Chang offline pitch time</li>
+    </ul>
   </div>
   <div class="to-book">
     <h3>To Book</h3>
