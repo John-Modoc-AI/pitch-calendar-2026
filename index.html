@@ -140,6 +140,20 @@
 </head>
 <body>
 
+<div id="password-gate" style="position:fixed;inset:0;background:#f5f7fa;z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:40px 48px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.1);text-align:center;max-width:400px;width:90%;">
+    <h2 style="color:#1F4E79;margin:0 0 24px;font-size:24px;">Pitch Calendar</h2>
+    <form id="password-form">
+      <input type="password" id="password-input" placeholder="Password" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid #d9d9d9;border-radius:4px;box-sizing:border-box;margin-bottom:8px;" autofocus>
+      <div style="font-size:12px;color:#888;margin-bottom:16px;text-align:left;">Hint: our app name</div>
+      <button type="submit" style="width:100%;padding:10px;background:#5B9BD5;color:#fff;border:none;border-radius:4px;font-size:14px;cursor:pointer;">Enter</button>
+      <div id="password-error" style="color:#c44;font-size:12px;margin-top:12px;display:none;">Incorrect password</div>
+    </form>
+  </div>
+</div>
+
+<div id="site-content" style="display:none;">
+
 <h1>Pitch Calendar</h1>
 
 <div class="calendar">
@@ -317,6 +331,29 @@
     </ul>
   </div>
 </div>
+
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('password-form');
+  var input = document.getElementById('password-input');
+  var err = document.getElementById('password-error');
+  var gate = document.getElementById('password-gate');
+  var content = document.getElementById('site-content');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (input.value === 'fevercoach') {
+      gate.style.display = 'none';
+      content.style.display = '';
+    } else {
+      err.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
