@@ -17,7 +17,7 @@ Open `index.html` in any modern browser. Password: `fevercoach` (hint shown on p
 2. Regenerate the encrypted `index.html`:
    ```
    npx staticrypt index.src.html -p fevercoach --short \
-     --template-title "Pitch Calendar" \
+     --template-title "Pitch Calendar 2026" \
      --template-instructions "Hint: our app name (all lowercase)" \
      --template-button "Enter" \
      --template-error "Wrong password" \
