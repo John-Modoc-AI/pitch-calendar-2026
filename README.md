@@ -19,6 +19,8 @@ Open `index.html` in any modern browser. Password: `fevercoach` (hint shown on p
    npx staticrypt index.src.html -p fevercoach --short \
      --template-title "Pitch Calendar" \
      --template-instructions "Hint: our app name (all lowercase)" \
+     --template-button "Enter" \
+     --template-error "Wrong password" \
      -d build && mv build/index.src.html index.html && rmdir build
    ```
 3. Commit both files.
