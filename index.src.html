@@ -52,6 +52,7 @@
   td.empty { background: #fafafa; }
   td.weekend-sun { background: #fff5f5; }
   td.weekend-sat { background: #f5f9fc; }
+  td.today { outline: 2px solid #000; outline-offset: -2px; position: relative; z-index: 1; }
   .day-num {
     font-weight: 600;
     font-size: 11px;
@@ -156,7 +157,7 @@
       <td>
         <div class="day-num"><span class="month">May</span>18</div>
       </td>
-      <td><div class="day-num">19</div></td>
+      <td class="today"><div class="day-num">19</div></td>
       <td><div class="day-num">20</div></td>
       <td><div class="day-num">21</div></td>
       <td><div class="day-num">22</div></td>
