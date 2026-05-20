@@ -157,7 +157,7 @@
       <td>
         <div class="day-num"><span class="month">May</span>18</div>
       </td>
-      <td class="today"><div class="day-num">19</div></td>
+      <td><div class="day-num">19</div></td>
       <td><div class="day-num">20</div></td>
       <td><div class="day-num">21</div></td>
       <td><div class="day-num">22</div></td>
@@ -333,6 +333,23 @@
     </ul>
   </div>
 </div>
+
+<script>
+(function(){
+  var start = new Date(2026, 4, 18);
+  var end = new Date(2026, 6, 21);
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (today < start || today > end) return;
+  var idx = Math.round((today - start) / 86400000);
+  var cells = document.querySelectorAll('.calendar td');
+  var dayCells = [];
+  for (var i = 0; i < cells.length; i++) {
+    if (cells[i].querySelector('.day-num')) dayCells.push(cells[i]);
+  }
+  if (dayCells[idx]) dayCells[idx].classList.add('today');
+})();
+</script>
 
 </body>
 </html>
